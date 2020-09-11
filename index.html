@@ -1,0 +1,87 @@
+<html lang="en" dir="ltr">
+  <head>
+
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css">
+  <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+  <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+  <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+
+      <script src="script.js"></script>
+
+      <meta charset="utf-8">
+
+
+    <title>OpenLayers example</title>
+  </head>
+<body>
+    Latitude: <input type="text" id="fLat" value="">
+    Longitude: <input type="text" id="fLong" value="">
+    <button id="btnclk">Submit</button>
+    <button id="getMapFeature">Get Feature</button>
+
+    Enter Name of City: <input type="text" id="city" value="">
+    <button id="cityclk">Search</button>
+    <button id="WMSclk">add WMS layer</button>
+    <button id="WFSclk">add WFS layer</button>
+    <button id="draw">draw</button>
+
+    <div class="flex-container ">
+      Layer Switcher:
+      <div>
+        <input type="checkbox" id="layer1" name="layer1" checked>
+        <label for="layer1"> Layer 1</label>
+      </div>
+      <div>
+        <input type="checkbox" id="layer2" name="layer2" checked>
+        <label for="layer2"> Layer 2</label>
+      </div>
+      <div>
+        <input type="checkbox" id="layer3" name="layer3" >
+        <label for="layer3"> Layer 3</label>
+      </div>
+    </div>
+    <form class="form-inline">
+  <label>Geometry type &nbsp;</label>
+  <select id="drawtype">
+    <option value="Point">Point</option>
+    <option value="LineString">LineString</option>
+    <option value="Polygon">Polygon</option>
+    <option value="Circle">Circle</option>
+  </select>
+</form>
+    <div class="pane">
+      Measuring
+      <button id="dist">Measure Distance</button>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Result</h3>
+        </div>
+        <div class="result-wrapper">
+          <samp id="js-result">n/a</samp>
+        </div>
+      </div>
+    </div>
+
+
+    <form class="form-inline">
+      <label>Action type &nbsp;</label>
+        <select id="type" class="form-control">
+          <option value="click" selected>Click</option>
+          <option value="singleclick">Single-click</option>
+          <option value="pointermove">Hover</option>
+          <option value="altclick">Alt+Click</option>
+          <option value="none">None</option>
+        </select>
+      <span id="status">&nbsp;0 selected features</span>
+    </form>
+
+    <img id='start' style="z-index:9999" src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" WIDTH="40px" height=auto>
+    <img id='end' style="z-index:9999" src="https://cdn3.iconfinder.com/data/icons/map-markers-2/512/marker_2-512.png" WIDTH="40px" height=auto>
+    <h1>Map</h1>
+      <div id="map" class="map"></div>
+      <div id="info">Here&nbsp;</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
